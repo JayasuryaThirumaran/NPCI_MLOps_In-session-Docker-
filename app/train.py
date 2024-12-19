@@ -3,7 +3,7 @@ import logging
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-import pickle
+import joblib
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -17,9 +17,7 @@ def train_model():
     y = iris.target
 
     # Split data
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42
-    )
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # Train model
     logger.info("Training model...")
@@ -32,8 +30,8 @@ def train_model():
 
     # Save model
     logger.info("Saving model...")
-    with open('app/model/iris_model.pkl', 'wb') as f:
-        pickle.dump(model, f)
+    joblib.dump(model, "app/model/iris_model.pkl")
+
 
 if __name__ == "__main__":
     train_model()
