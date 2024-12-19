@@ -1,0 +1,22 @@
+{
+  "name": "Basic ML Docker Environment",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
+  "settings": {
+    "python.pythonPath": "/usr/local/bin/python"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "esbenp.prettier-vscode"
+  ],
+  "postCreateCommand": "pip install -r ../requirements.txt",
+  "portsAttributes": {
+    "5000": {
+      "label": "Prediction API",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
