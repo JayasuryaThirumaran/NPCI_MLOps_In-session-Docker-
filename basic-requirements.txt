@@ -1,0 +1,4 @@
+# Basic ML requirements
+scikit-learn==1.0.2
+numpy==1.22.3
+flask==2.0.1
