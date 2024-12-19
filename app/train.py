@@ -32,7 +32,7 @@ def train_model():
 
     # Save model
     logger.info("Saving model...")
-    with open('model/iris_model.pkl', 'wb') as f:
+    with open('app/model/iris_model.pkl', 'wb') as f:
         pickle.dump(model, f)
 
 if __name__ == "__main__":
